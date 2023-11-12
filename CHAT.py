@@ -9,7 +9,7 @@ st.set_page_config(page_title="WORLD CUP 2023 BOT, powered by LlamaIndex", page_
 
 openai.api_key = "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"
 st.title("learn about the world cup schedule, powered by LlamaIndex 🏆🏏")
-
+st.markdown("We created this Language Model with :heart:")
 
 if "messages" not in st.session_state.keys(): # Initialize the chat messages history
     st.session_state.messages = [
@@ -42,6 +42,8 @@ for message in st.session_state.messages: # Display the prior chat messages
         st.write(message["content"])
 
 # If last message is not from assistant, generate a new response
+
+
 if st.session_state.messages[-1]["role"] != "assistant":
     with st.chat_message("assistant"):
         with st.spinner("analysing question..."):
@@ -49,3 +51,27 @@ if st.session_state.messages[-1]["role"] != "assistant":
             st.write(response.response)
             message = {"role": "assistant", "content": response.response}
             st.session_state.messages.append(message)
+
+st.markdown("""
+    <style>
+        .footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 400px; /* Adjust the width as needed */
+            
+            color: white; /* Text color */
+            text-align: center;
+            padding: 10px;
+        }
+
+        .icon {
+            display: inline-block;
+            margin: 0 10px;
+        }
+    </style>
+    <div class="footer">
+        <p>Follow Karthik on <a href="https://github.com/Kart8ik" target="_blank" style="color: white;">GitHub</a></p>
+        <p>Follow Musharraf on <a href="https://github.com/MohammedMusharraf11" target="_blank" style="color: white;">GitHub</a></p>
+    </div>
+""", unsafe_allow_html=True)
