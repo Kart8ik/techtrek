@@ -1,0 +1,11 @@
+my_name=Shri Karthik
+Section=F
+Semester=1
+Branch=CSE
+isa1_status=Done
+
+my_name=Musharaff
+Section=F
+Semester=1
+Branch=ECE
+isa1_status=Done
